@@ -50,3 +50,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/Draw2D/bin/Debug
+/Draw2D/obj/Debug

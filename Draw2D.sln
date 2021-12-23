@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draw2D", "Draw2D\Draw2D.csproj", "{58E4F006-00DA-4B64-A164-3B08FB6ED34D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58E4F006-00DA-4B64-A164-3B08FB6ED34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E4F006-00DA-4B64-A164-3B08FB6ED34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E4F006-00DA-4B64-A164-3B08FB6ED34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E4F006-00DA-4B64-A164-3B08FB6ED34D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D437104-B35B-4C79-A765-6BA8A3B86337}
+	EndGlobalSection
+EndGlobal
