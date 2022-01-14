@@ -23,6 +23,11 @@ namespace Draw2D.Entities
         [NonSerialized]
         private List<BaseGraphic> _clonedObjects;
 
+        public List<BaseGraphic> SelectedObjects
+        {
+            get { return _selectedObjects; }
+        }
+
         public Drawing(int displayHeight)
         {
             Layers = new List<Layer>();
@@ -67,7 +72,36 @@ namespace Draw2D.Entities
             return pt;
         }
 
-        public BaseGraphic GetObject(Point point)
+        public BaseGraphic SelectObject(Point point, bool keepSelection = false)
+        {
+            var obj = GetObject(point);
+            if (obj == null)
+            {
+                if (!keepSelection)
+                {
+                    ClearSelection();
+                }
+
+            }
+            else
+            {
+                if (!_selectedObjects.Contains(obj))
+                {
+                    if(!keepSelection)
+                        _selectedObjects.Clear();
+                    _selectedObjects.Add(obj);
+                }
+            }
+
+            return obj;
+        }
+
+        /// <summary>
+        /// TODO: Napraviti da enumerira sve obrnuto od redslijeda kreiranja elemenata
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
+        private BaseGraphic GetObject(Point point)
         {
             foreach (var layer in Layers.Where(l => l.Visible && !l.Locked))
             {
@@ -75,8 +109,6 @@ namespace Draw2D.Entities
                 {
                     if (go.ContainsPoint(point))
                     {
-                        if (!_selectedObjects.Contains(go))
-                            _selectedObjects.Add(go);
                         return go;
                     }
                 }
@@ -145,6 +177,33 @@ namespace Draw2D.Entities
             {
                 layer.Draw(gr);
             }
+        }
+
+        public void SizeHorizontal(decimal magnify, Position referentPoint)
+        {
+            if (_selectedObjects == null || !_selectedObjects.Any())
+                return;
+
+            foreach (var ob in _selectedObjects)
+                ob.SizeHorizontal(magnify, null);
+        }
+
+        public void SizeVertical(decimal magnify, Position referentPoint)
+        {
+            if (_selectedObjects == null || !_selectedObjects.Any())
+                return;
+
+            foreach (var ob in _selectedObjects)
+                ob.SizeVertical(magnify, null);
+        }
+
+        public void Size(decimal magnify, Position referentPoint)
+        {
+            if (_selectedObjects == null || !_selectedObjects.Any())
+                return;
+
+            foreach (var ob in _selectedObjects)
+                ob.Size(magnify, null);
         }
     }
 }

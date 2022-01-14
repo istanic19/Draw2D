@@ -313,6 +313,21 @@ namespace Draw2D.GraphicsObjects.Base
                 _path.Dispose();
         }
 
+        public virtual void SizeHorizontal(decimal magnify, Position referentPoint)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void SizeVertical(decimal magnify, Position referentPoint)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Size(decimal magnify, Position referentPoint)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual BaseGraphic Clone()
         {
             throw new NotImplementedException();

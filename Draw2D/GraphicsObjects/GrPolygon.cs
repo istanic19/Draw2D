@@ -110,5 +110,73 @@ namespace Draw2D.GraphicsObjects
             }
             Recalculate();
         }
+
+        public override void SizeHorizontal(decimal magnify, Position referentPoint)
+        {
+            if (referentPoint == null)
+            {
+                var leftMost = Points.Min(p => p.X);
+                referentPoint = Points.FirstOrDefault(p => p.X == leftMost);
+            }
+
+            foreach (var point in Points)
+            {
+                if (point == referentPoint)
+                    continue;
+
+                var dx = point.X - referentPoint.X;
+                dx = dx * magnify;
+                point.X = referentPoint.X + dx;
+            }
+
+            Recalculate();
+        }
+
+        public override void SizeVertical(decimal magnify, Position referentPoint)
+        {
+            if (referentPoint == null)
+            {
+                var bottomMost = Points.Min(p => p.Y);
+                referentPoint = Points.FirstOrDefault(p => p.Y == bottomMost);
+            }
+
+            foreach (var point in Points)
+            {
+                if (point == referentPoint)
+                    continue;
+
+                var dy = point.Y - referentPoint.Y;
+                dy = dy * magnify;
+                point.Y = referentPoint.Y + dy;
+            }
+
+            Recalculate();
+        }
+
+        public override void Size(decimal magnify, Position referentPoint)
+        {
+            if (referentPoint == null)
+            {
+                var bottomMost = Points.Min(p => p.Y);
+                var leftMost = Points.Min(p => p.X);
+                referentPoint = new Position(leftMost, bottomMost);
+            }
+
+            foreach (var point in Points)
+            {
+                if (point.IsEquel(referentPoint))
+                    continue;
+
+                var dy = point.Y - referentPoint.Y;
+                dy = dy * magnify;
+                point.Y = referentPoint.Y + dy;
+
+                var dx = point.X - referentPoint.X;
+                dx = dx * magnify;
+                point.X = referentPoint.X + dx;
+            }
+
+            Recalculate();
+        }
     }
 }

@@ -34,15 +34,21 @@ namespace Draw2D.Forms
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pbDisplay = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btIncreaseWidth = new System.Windows.Forms.Button();
+            this.btDecreaseWidth = new System.Windows.Forms.Button();
+            this.btnDecreaseHeight = new System.Windows.Forms.Button();
+            this.btnIncreaseHeight = new System.Windows.Forms.Button();
+            this.btnSizeMinus = new System.Windows.Forms.Button();
+            this.btnSizePlus = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,6 +94,12 @@ namespace Draw2D.Forms
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnSizeMinus);
+            this.splitContainer1.Panel2.Controls.Add(this.btnSizePlus);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDecreaseHeight);
+            this.splitContainer1.Panel2.Controls.Add(this.btnIncreaseHeight);
+            this.splitContainer1.Panel2.Controls.Add(this.btDecreaseWidth);
+            this.splitContainer1.Panel2.Controls.Add(this.btIncreaseWidth);
             this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.button8);
             this.splitContainer1.Panel2.Controls.Add(this.button7);
@@ -116,75 +128,15 @@ namespace Draw2D.Forms
             this.pbDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbDisplay_MouseMove);
             this.pbDisplay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbDisplay_MouseUp);
             // 
-            // button1
+            // button9
             // 
-            this.button1.Location = new System.Drawing.Point(38, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Clear all";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 396);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Closed curve";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(38, 425);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ellipse";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(38, 454);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Pie";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(38, 483);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Arc";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 367);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(101, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Curve";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(12, 338);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(101, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Polygon";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button9.Location = new System.Drawing.Point(12, 280);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(101, 23);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "Line";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -196,15 +148,135 @@ namespace Draw2D.Forms
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button9
+            // button7
             // 
-            this.button9.Location = new System.Drawing.Point(12, 280);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(101, 23);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Line";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button7.Location = new System.Drawing.Point(12, 338);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(101, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Polygon";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 367);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(101, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Curve";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(38, 483);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Arc";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(38, 454);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Pie";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(38, 425);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Ellipse";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 396);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Closed curve";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(38, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Clear all";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btIncreaseWidth
+            // 
+            this.btIncreaseWidth.Location = new System.Drawing.Point(12, 213);
+            this.btIncreaseWidth.Name = "btIncreaseWidth";
+            this.btIncreaseWidth.Size = new System.Drawing.Size(58, 23);
+            this.btIncreaseWidth.TabIndex = 9;
+            this.btIncreaseWidth.Text = "Width +";
+            this.btIncreaseWidth.UseVisualStyleBackColor = true;
+            this.btIncreaseWidth.Click += new System.EventHandler(this.btIncreaseWidth_Click);
+            // 
+            // btDecreaseWidth
+            // 
+            this.btDecreaseWidth.Location = new System.Drawing.Point(72, 213);
+            this.btDecreaseWidth.Name = "btDecreaseWidth";
+            this.btDecreaseWidth.Size = new System.Drawing.Size(58, 23);
+            this.btDecreaseWidth.TabIndex = 10;
+            this.btDecreaseWidth.Text = "Width -";
+            this.btDecreaseWidth.UseVisualStyleBackColor = true;
+            this.btDecreaseWidth.Click += new System.EventHandler(this.btDecreaseWidth_Click);
+            // 
+            // btnDecreaseHeight
+            // 
+            this.btnDecreaseHeight.Location = new System.Drawing.Point(72, 184);
+            this.btnDecreaseHeight.Name = "btnDecreaseHeight";
+            this.btnDecreaseHeight.Size = new System.Drawing.Size(58, 23);
+            this.btnDecreaseHeight.TabIndex = 12;
+            this.btnDecreaseHeight.Text = "Height -";
+            this.btnDecreaseHeight.UseVisualStyleBackColor = true;
+            this.btnDecreaseHeight.Click += new System.EventHandler(this.btnDecreaseHeight_Click);
+            // 
+            // btnIncreaseHeight
+            // 
+            this.btnIncreaseHeight.Location = new System.Drawing.Point(12, 184);
+            this.btnIncreaseHeight.Name = "btnIncreaseHeight";
+            this.btnIncreaseHeight.Size = new System.Drawing.Size(58, 23);
+            this.btnIncreaseHeight.TabIndex = 11;
+            this.btnIncreaseHeight.Text = "Height +";
+            this.btnIncreaseHeight.UseVisualStyleBackColor = true;
+            this.btnIncreaseHeight.Click += new System.EventHandler(this.btnIncreaseHeight_Click);
+            // 
+            // btnSizeMinus
+            // 
+            this.btnSizeMinus.Location = new System.Drawing.Point(72, 155);
+            this.btnSizeMinus.Name = "btnSizeMinus";
+            this.btnSizeMinus.Size = new System.Drawing.Size(58, 23);
+            this.btnSizeMinus.TabIndex = 14;
+            this.btnSizeMinus.Text = "--";
+            this.btnSizeMinus.UseVisualStyleBackColor = true;
+            this.btnSizeMinus.Click += new System.EventHandler(this.btnSizeMinus_Click);
+            // 
+            // btnSizePlus
+            // 
+            this.btnSizePlus.Location = new System.Drawing.Point(12, 155);
+            this.btnSizePlus.Name = "btnSizePlus";
+            this.btnSizePlus.Size = new System.Drawing.Size(58, 23);
+            this.btnSizePlus.TabIndex = 13;
+            this.btnSizePlus.Text = "++";
+            this.btnSizePlus.UseVisualStyleBackColor = true;
+            this.btnSizePlus.Click += new System.EventHandler(this.btnSizePlus_Click);
             // 
             // frmMain
             // 
@@ -248,6 +320,12 @@ namespace Draw2D.Forms
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnSizeMinus;
+        private System.Windows.Forms.Button btnSizePlus;
+        private System.Windows.Forms.Button btnDecreaseHeight;
+        private System.Windows.Forms.Button btnIncreaseHeight;
+        private System.Windows.Forms.Button btDecreaseWidth;
+        private System.Windows.Forms.Button btIncreaseWidth;
     }
 }
 

@@ -323,7 +323,6 @@ namespace Draw2D.Forms
             pbDisplay.Invalidate();
         }
 
-        private BaseGraphic _selectedObject = null;
         private Point? _referentPoint = null;
 
         private void pbDisplay_MouseDown(object sender, MouseEventArgs e)
@@ -331,24 +330,25 @@ namespace Draw2D.Forms
             if (_drawing == null)
                 return;
             _referentPoint = e.Location;
-            _selectedObject = _drawing.GetObject(e.Location);
-            //if (_selectedObject != null)
-                //MessageBox.Show(this, _selectedObject.ToString(), "Hit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _drawing.SelectObject(e.Location, ModifierKeys == Keys.Control);
         }
 
         private void pbDisplay_MouseUp(object sender, MouseEventArgs e)
         {
             if (_drawing == null)
                 return;
-            if (_selectedObject == null)
+
+            /*var selection = _drawing.SelectObject(e.Location, Control.ModifierKeys == Keys.Control);
+            if (selection == null)
             {
                 _drawing.ClearSelection();
             }
             else
             {
                 _drawing.ClearCloned();
-            }
+            }*/
 
+            _drawing.ClearCloned();
             _referentPoint = null;
         }
 
@@ -356,11 +356,65 @@ namespace Draw2D.Forms
         {
             if (_drawing == null)
                 return;
-            if (_selectedObject != null && _referentPoint != null)
+            if ((e.Button & MouseButtons.Left) != 0 && _drawing.SelectedObjects.Any() && _referentPoint != null)
             {
                 _drawing.MoveObjects(_referentPoint.Value, e.Location);
                 pbDisplay.Invalidate();
             }
+        }
+
+        private void btIncreaseWidth_Click(object sender, EventArgs e)
+        {
+            if (_drawing == null)
+                return;
+
+            _drawing.SizeHorizontal(1.1m,null);
+            pbDisplay.Invalidate();
+        }
+
+        private void btDecreaseWidth_Click(object sender, EventArgs e)
+        {
+            if (_drawing == null)
+                return;
+
+            _drawing.SizeHorizontal(0.9m, null);
+            pbDisplay.Invalidate();
+        }
+
+        private void btnIncreaseHeight_Click(object sender, EventArgs e)
+        {
+            if (_drawing == null)
+                return;
+
+            _drawing.SizeVertical(1.1m, null);
+            pbDisplay.Invalidate();
+        }
+
+        private void btnDecreaseHeight_Click(object sender, EventArgs e)
+        {
+            if (_drawing == null)
+                return;
+
+            _drawing.SizeVertical(0.9m, null);
+            pbDisplay.Invalidate();
+        }
+
+        private void btnSizePlus_Click(object sender, EventArgs e)
+        {
+            if (_drawing == null)
+                return;
+
+            _drawing.Size(1.1m, null);
+            pbDisplay.Invalidate();
+        }
+
+        private void btnSizeMinus_Click(object sender, EventArgs e)
+        {
+            if (_drawing == null)
+                return;
+
+            _drawing.Size(0.9m, null);
+            pbDisplay.Invalidate();
         }
     }
 }
